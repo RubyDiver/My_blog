@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :links
+  resources :articles do
+    resources :comments
+  end
   devise_for :users
 
-  root to: "links#index"
+  root to: "articles#index"
 end
+
